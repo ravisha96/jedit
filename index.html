@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<button name="button" id="clk">button</button>
+	
+	<script src="resources/jquery-2.1.1.min.js"></script>
+	<script src="resources/lodash.js"></script>
+	<script src="crud.js"></script>
+	<script>
+
+		// Example of DELETE call
+		var removeCall = new CRUD('json_file_name.json').remove({id: 'value'});
+
+		// Example of POST call
+		var postCall = new CRUD('json_file_name.json').post({property_name: 'value'});
+		postCall.done(function (data) {
+			console.table(JSON.parse(data));
+		});
+
+		// Example of GET call
+		var getCall = new CRUD('json_file_name.json').get();
+		getCall.done(function (data) {
+			console.table(JSON.parse(data));
+		});
+
+		// Example of GET call with sorting
+		var selectCall = new CRUD('json_file_name.json').get({property_name: 'value'});
+		getCall.done(function (data) {
+			console.table(JSON.parse(data));
+		});
+
+		// Example of GET call with sorting
+		var updateCall = new CRUD('data.json').update({id: 'unique_key', update: {property_name: 'value'} });
+		
+
+	</script>
+</body>
+</html>
