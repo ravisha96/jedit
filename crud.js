@@ -5,8 +5,8 @@ function CRUD(url) {
 	'use strict';
 	var self = this;
 	self.url = url;
+	self.php = null;
 }
-
 CRUD.prototype.get = function(userHasFiltered) {
 	'use strict';
 	var self = this, post;
@@ -19,10 +19,10 @@ CRUD.prototype.update = function(updateId) {
 	var self = this, post, updateItem;
 	post = self.ajax('get', self.url);
 
-	post.done(function (update) {
+	return post.done(function (update) {
 		updateItem = _.filter(JSON.parse(update), function (data) {
 			var key;
-			if(data.id === updateId.id) {
+			if(data[_.first(Object.keys(updateId))] === updateId[_.first(Object.keys(updateId))]) {
 				for(key in updateId.update) {
 					data[key] = updateId.update[key];
 				}
@@ -30,14 +30,32 @@ CRUD.prototype.update = function(updateId) {
 			return data;
 		});
 		
-		self.post(updateItem);
+		return self.insert(updateItem);
 	});
+};
+
+CRUD.prototype.insert = function(insertUserData) {
+	'use strict';
+	var self = this;
+	return self.ajax('post', {url: self.url, data: JSON.stringify(insertUserData)});
 };
 
 CRUD.prototype.post = function(insertUserData) {
 	'use strict';
-	var self = this;
-	return self.ajax('post', {url: self.url, data: JSON.stringify(insertUserData)});
+
+	if (!(insertUserData)) throw new Error("method require data to insert");
+
+	var self = this, insert = {id: self.unique()};
+	_.extend(insert, insertUserData);
+	
+	return self.ajax('get', self.url).done(function (data) {
+		var inject
+		if(data){
+			inject = JSON.parse(data);
+			inject.push(insert);
+		} else inject = [insert];
+		return self.ajax('post', {url: self.url, data: JSON.stringify(inject)});
+	});
 };
 
 CRUD.prototype.remove = function(uniqueId) {
@@ -45,11 +63,11 @@ CRUD.prototype.remove = function(uniqueId) {
 	var self = this, post;
 	post = self.ajax('get', self.url);
 
-	post.done(function (removeItem) {
+	return post.done(function (removeItem) {
 		removeItem = _.filter(JSON.parse(removeItem), function (data) {
-			return data.id !== uniqueId.id;
+			return data[_.first(Object.keys(uniqueId))] !== uniqueId[_.first(Object.keys(uniqueId))];
 		});
-		self.post(removeItem);
+		return self.insert(removeItem);
 	});
 };
 
@@ -66,14 +84,15 @@ CRUD.prototype.removeItem = function (json, deleteUserData) {
 
 CRUD.prototype.unique = function () {
 	'use strict';
-	return Math.random(1).toString().split('.')[1];
+	return parseInt(Math.random(1).toString().split('.')[1]);
 };
 
 CRUD.prototype.ajax = function(backendMethodCall, userData) {
 	'use strict';
+	self.php = (self.php) ? self.php : 'filesystem.php';
 	return $.ajax({
 		method: 'POST',
-		url: 'filesystem.php',
+		url: self.php,
 		data: {method: backendMethodCall, data: userData}
 	});
 };

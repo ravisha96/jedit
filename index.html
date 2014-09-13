@@ -14,28 +14,28 @@
 	<script>
 
 		// Example of DELETE call
-		var removeCall = new CRUD('json_file_name.json').remove({id: 'value'});
+		// var removeCall = new CRUD('json_file_name.json').remove({id: 'value'});
 
-		// Example of POST call
-		var postCall = new CRUD('json_file_name.json').post({property_name: 'value'});
-		postCall.done(function (data) {
-			console.table(JSON.parse(data));
-		});
+		// // Example of POST call
+		// var postCall = new CRUD('json_file_name.json').post({property_name: 'value'});
+		// postCall.done(function (data) {
+		// 	console.table(JSON.parse(data));
+		// });
 
-		// Example of GET call
-		var getCall = new CRUD('json_file_name.json').get();
-		getCall.done(function (data) {
-			console.table(JSON.parse(data));
-		});
+		// // Example of GET call
+		// var getCall = new CRUD('json_file_name.json').get();
+		// getCall.done(function (data) {
+		// 	console.table(JSON.parse(data));
+		// });
 
-		// Example of GET call with sorting
-		var selectCall = new CRUD('json_file_name.json').get({property_name: 'value'});
-		getCall.done(function (data) {
-			console.table(JSON.parse(data));
-		});
+		// // Example of GET call with sorting
+		// var selectCall = new CRUD('json_file_name.json').get({property_name: 'value'});
+		// getCall.done(function (data) {
+		// 	console.table(JSON.parse(data));
+		// });
 
-		// Example of GET call with sorting
-		var updateCall = new CRUD('data.json').update({id: 'unique_key', update: {property_name: 'value'} });
+		// // Example of GET call with sorting
+		// var updateCall = new CRUD('data.json').update({id: 'unique_key', update: {property_name: 'value'} });
 		
 
 	</script>
