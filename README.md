@@ -14,6 +14,27 @@ JEdit uses a number of open source projects to work properly:
 * [Apache] - Server
 * [jQuery] - duh
 
+### Usage
+
+A simple get call, will return you with a deferred object with all the data in the json file.
+```bash
+new CRUD('login.json').get() 
+```
+A get call with filters applied, you can pass multiple filters and retrive the deferred object with the matched value. Matching starts in a sequence from left to right.
+```bash
+new CRUD('login.json').get({username: 'ravisha96@gmail.com', password: 'password'})
+```
+Update method accept two property in a parameter, first property will be used to match, use can choose any property for matching for example I have used <b>'id'</b>, second property is <b>'Update'</b> accepts an object to update the matched objects properties values. If the properties are not matched it will insert an new entry for the matched object.
+```bash
+new CRUD('login.json').update({
+    id: 120345,
+    update: {
+        username: 'ravi_sha96@yahoo.com', 
+        password: 'password'
+    }
+});
+```
+
 ### Development
 
 Want to contribute? Great!
