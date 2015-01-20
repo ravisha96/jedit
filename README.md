@@ -38,6 +38,12 @@ new CRUD('login.json').update({
     }
 });
 ```
+### WIP
+Watch this space for the upcoming changes and add-ons.
+> 1. Method Chaining
+> 2. Authentications
+> 3. Join Multiple Queries similar to <b> SQL JOIN </b>
+
 
 ### Development
 
