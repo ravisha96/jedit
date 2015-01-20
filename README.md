@@ -3,6 +3,7 @@
 > Jedit is a lightweight plugin to help you to do end-to-end testing without any backend schema. The idea is to use your JSON files as your Model with all kind of service calls. Here service call will not actually make an database query instead it will use you JSON file to fetch the data. You can simply call your four magical javascript methods and it will help you to <b> CREATE | READ | UPDATE | DELETE </b> aka <b>CRUD</b>
 in your JSON file. The core of this plugin uses PHP Filesytem
 
+<hr />
 ### Version
 0.0.1
 
@@ -15,9 +16,9 @@ JEdit uses a number of open source projects to work properly:
 * [Apache] - Server
 * [jQuery] - duh
 
-<hr/>
-
 ### Usage
+
+Initialize the CRUD class, it accepts a parameter, the URL of the JSON file you want to use. It comes with couple of configuration which we can do, and we will see here.
 
 A simple get call, will return you with a deferred object with all the data in the json file.
 ```bash
