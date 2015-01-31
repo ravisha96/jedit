@@ -1,0 +1,74 @@
+[
+  {
+    "_id": "54c5336851a6faff36972afa",
+    "age": 31,
+    "eyeColor": "brown",
+    "phone": "+1 (844) 534-3459",
+    "latitude": 77.761356,
+    "longitude": -106.994095
+  },
+  {
+    "_id": "54c533688689310b165aa0b2",
+    "age": 20,
+    "eyeColor": "brown",
+    "phone": "+1 (986) 586-2639",
+    "latitude": 73.591752,
+    "longitude": -35.220712
+  },
+  {
+    "_id": "54c53368360f1aad9a9e21f8",
+    "age": 21,
+    "eyeColor": "brown",
+    "phone": "+1 (905) 587-3480",
+    "latitude": 39.32256,
+    "longitude": 57.103139
+  },
+  {
+    "_id": "54c53368034af1e73cb4b250",
+    "age": 39,
+    "eyeColor": "brown",
+    "phone": "+1 (832) 562-2099",
+    "latitude": -13.049558,
+    "longitude": 144.173969
+  },
+  {
+    "_id": "54c53368c5596cb87c5ca34a",
+    "age": 30,
+    "eyeColor": "brown",
+    "phone": "+1 (954) 486-3148",
+    "latitude": 73.82393,
+    "longitude": 96.57838
+  },
+  {
+    "_id": "54c53368190e4f440cbbb77a",
+    "age": 33,
+    "eyeColor": "brown",
+    "phone": "+1 (921) 522-2405",
+    "latitude": -87.863738,
+    "longitude": 131.809772
+  },
+  {
+    "_id": "54c5336864390f70c3f8f456",
+    "age": 23,
+    "eyeColor": "green",
+    "phone": "+1 (866) 590-3622",
+    "latitude": 88.909633,
+    "longitude": -173.724748
+  },
+  {
+    "_id": "54c533687a02e76af0dadd66",
+    "age": 24,
+    "eyeColor": "brown",
+    "phone": "+1 (846) 400-2202",
+    "latitude": -63.779666,
+    "longitude": -64.093752
+  },
+  {
+    "_id": "54c53368f2eb86b173e2c800",
+    "age": 20,
+    "eyeColor": "green",
+    "phone": "+1 (843) 507-3925",
+    "latitude": -45.009913,
+    "longitude": 14.069907
+  }
+]

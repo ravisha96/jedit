@@ -9,6 +9,7 @@
 	
 	<script src="resources/jquery-2.1.1.min.js"></script>
 	<script src="resources/lodash.js"></script>
+	<script src="config.js"></script>
 	<script src="crud.js"></script>
 	<script>
 
@@ -36,7 +37,8 @@
 		// Example of GET call with sorting
 		// var updateCall = new CRUD('login.json').update({_id: '54be8c766e7c2361e4648ec2', update: {username: 'value'} });
 		
-
+		new CRUD().select('*').from('tabels.login, tables.profile').where('tables.login.id = tables.profile.id OR tables.login.id = 23');
+		// new CRUD().insert(['*']).from([tabels.login, tables.profile]).where('tables.login.id =  tables.profile.id OR tables.login.id = 23 AND ').limit(1);
 	</script>
 </body>
 </html>
